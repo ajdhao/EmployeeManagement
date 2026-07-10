@@ -1,4 +1,4 @@
-name: Build EmployeeManagement
+name: EmployeeManagement CI Build
 
 on:
   push:
