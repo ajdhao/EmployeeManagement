@@ -12,6 +12,7 @@ namespace EmployeeManagement.Controllers
     {
         // GET: Employee
         //test commit 
+        //employee-api-optimization
         public ActionResult Index()
         {
             EmployeeBl bl = new EmployeeBl();
