@@ -1,0 +1,29 @@
+name: EmployeeManagement CI Build
+
+on:
+  push:
+    branches:
+      - Dev
+      - main
+
+  pull_request:
+    branches:
+      - Dev
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Restore NuGet packages
+      run: nuget restore EmployeeManagement.sln
+
+    - name: Build Solution
+      run: msbuild EmployeeManagement.sln /p:Configuration=Release
